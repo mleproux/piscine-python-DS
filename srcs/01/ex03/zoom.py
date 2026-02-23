@@ -16,7 +16,7 @@ def zoom_img(img: any, x, y) -> any:
 
 
 def main():
-    """Load a image and \"zoom it\" by resizing the image 
+    """Load a image and \"zoom it\" by resizing the image
     using lesser dimension"""
     try:
         new_width = int(input("Please provide the new width in pixels:"))
