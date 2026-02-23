@@ -9,12 +9,15 @@ def main():
     if db is None:
         print(f"Error: Invalid path. {path}")
     else:
-        test = db["country"]
-        db.plot()
-        
+        db.dropna(inplace=True)
+        france_data = db[db['country'] == "France"].iloc[:, 1:]
+        years_data = france_data.columns.astype(int)
+        plt.plot(years_data, france_data.values.flatten(), label="France")
+        plt.title("France Life expectancy Projections")
+        plt.xlabel("Year")
+        plt.ylabel("Life Expectancy")
         plt.show()
     
-
 
 if __name__ == "__main__":
     main()
